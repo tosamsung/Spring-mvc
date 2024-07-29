@@ -1,0 +1,44 @@
+<style>
+	.table-container {
+		height: 70vh;
+		overflow-y: auto;
+	}
+
+	.table-container table {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	.table-container thead {
+		position: sticky;
+		top: 0;
+		z-index: 1;
+		background: white;
+	}
+
+	*/ .table-bordered th,
+	.table-bordered td {
+		border: 1px solid rgb(128, 128, 128);
+		/* Set border thickness and color */
+	}
+</style>
+<div style="margin-top: 40px;" class="table-container">
+	<table class="table table table-hover text-center">
+		<thead class="table-dark">
+			<tr>
+				<th></th>
+				<th scope="col" ng-repeat="role in roles">{{role.name}}</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="table-active " ng-repeat="acc in admins">
+				<td>{{acc.fullname}}</td>
+				<th ng-repeat="role in roles" class="text-center">
+					<input ng-checked="authority_of(acc, role)" ng-click="authority_changed(acc, role)" type="checkbox">
+				</th>
+			</tr>
+		</tbody>
+	</table>
+
+</div>

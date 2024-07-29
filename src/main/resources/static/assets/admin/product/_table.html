@@ -1,0 +1,76 @@
+<style>
+.table-container {
+  height: 70vh;
+  overflow-y: auto; 
+}
+
+.table-container table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table-container thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: white;
+}*/
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid rgb(128, 128, 128); /* Set border thickness and color */
+}
+</style>
+<div class="table-container">
+  <table class="table table table-hover text-center">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Date</th>
+        <th scope="col">Image</th>
+        <th scope="col">Category</th>
+        <th scope="col">Available</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-active " ng-repeat="p in pager.items">
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.price | number : 2}}</td>
+        <td>{{p.createDate | date : 'dd-MM-yyyy'}}</td>
+        <td>{{p.image}}</td>
+        <td>{{p.category.name}}</td>
+        <td>{{p.available ? 'Yes' : 'No'}}</td>
+        <td>
+          <div>
+            <button ng-click="edit(p)"><i class="bi bi-pencil-square"></i></button>
+            <button ng-click="delete(p)"><i class="bi bi-x-square"></i></button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>
+<nav style="margin-top: 20px;" aria-label="...">
+  <ul class="pagination">
+    <li class="page-item" ng-class="{disabled: pager.page === 0}">
+      <button class="page-link" ng-click="pager.first()">First</button>
+    </li>
+    <li class="page-item" ng-class="{disabled: pager.page === 0}">
+      <button class="page-link" ng-click="pager.prev()">Previous</button>
+    </li>
+    <li class="page-item" ng-repeat="n in [].constructor(pager.pageCount) track by $index" ng-class="{active: $index === pager.page}">
+      <button class="page-link" ng-click="pager.page = $index">{{$index + 1}}</button>
+    </li>
+    <li class="page-item" ng-class="{disabled: pager.page >= pager.pageCount - 1}">
+      <button class="page-link" ng-click="pager.next()">Next</button>
+    </li>
+    <li class="page-item" ng-class="{disabled: pager.page >= pager.pageCount - 1}">
+      <button class="page-link" ng-click="pager.last()">Last</button>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,8 @@
+<div class="mb-3">
+  <label for="yearSelect" class="form-label">Select Year</label>
+  <select class="form-select" id="yearSelect" ng-model="selectedOption" ng-options="option for option in options" ng-change="updateData()">
+  </select>
+</div>
+<div>
+  <canvas id="myChart" chartjs></canvas>
+</div>

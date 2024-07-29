@@ -1,0 +1,20 @@
+<div class="container mt-5">
+	<ul class="nav nav-tabs" id="myTab" role="tablist">
+		<li class="nav-item" role="presentation">
+			<button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button"
+				role="tab" aria-controls="tab1" aria-selected="true">Edition</button>
+		</li>
+		<li class="nav-item" role="presentation">
+			<button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab"
+				aria-controls="tab2" aria-selected="false">List</button>
+		</li>
+	</ul>
+	<div class="tab-content" id="myTabContent">
+		<div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+			<div ng-include="'/assets/admin/product/_form.html'"></div>
+		</div>
+		<div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+			<div ng-include="'/assets/admin/product/_table.html'"></div>
+		</div>
+	</div>
+</div>
