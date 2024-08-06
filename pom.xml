@@ -9,10 +9,10 @@
 		<version>2.4.4</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.Lab71</groupId>
-	<artifactId>Lab71</artifactId>
+	<groupId>com.AsmJava6</groupId>
+	<artifactId>AsmJava6</artifactId>
 	<version>1.0</version>
-	<name>Lab71</name>
+	<name>AsmJava6</name>
 	<description>Security Demo</description>
 	<properties>
 		<java.version>1.8</java.version>

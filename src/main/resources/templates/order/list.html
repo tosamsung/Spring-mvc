@@ -5,10 +5,10 @@
 	<main>
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
-		<div class="page-content container">
+		<div class="page-content">
 
 
-			<div class="container px-0" style="width: 80%;">
+			<div class="container px-0" style="width: 50%;">
 				<div class="row mt-4">
 					<div class="col-12 col-lg-12">
 
@@ -19,22 +19,22 @@
 
 
 						<div class="mt-4">
-							<div class="row text-600 text-white bgc-default-tp1 py-25">
+							<div class="row text-600 text-white bg-success py-25">
 								<div class="d-none d-sm-block col-1">No</div>
-								<div class="col-9 col-sm-5">Order No</div>
-								<div class="d-none d-sm-block col-4 col-sm-2">Order Date</div>
-								<div class="d-none d-sm-block col-sm-2">Shipping Address</div>
-								<div style="margin-left: 0px;" class="d-none d-sm-block col-sm-2">Detail</div>
+								<div class="col-5 col-sm-2">Order No</div>
+								<div class="d-none d-sm-block col-4 col-sm-3">Order Date</div>
+								<div class="d-none d-sm-block col-sm-3">Shipping Address</div>
+								<div style="margin-left: 0px;" class="d-none d-sm-block col">Detail</div>
 
 							</div>
 
 							<div class="text-95 text-secondary-d3">
-								<div class="row mb-2 mb-sm-0 py-25" th:each="order, state : ${orders}">
+								<div class="row mb-2 mb-sm-0 py-25 border border-1" th:each="order, state : ${orders}">
 									<div class="d-none d-sm-block col-1">[[${state.index}]]</div>
-									<div class="col-9 col-sm-5">[[${order.id}]]</div>
-									<div class="d-none d-sm-block col-2">[[${order.createDate}]]</div>
-									<div class="d-none d-sm-block col-2 text-95">[[${order.address}]]</div>
-									<div class="d-none d-sm-block col-2 text-95">
+									<div class="col-5 col-sm-2">[[${order.id}]]</div>
+									<div class="d-none d-sm-block col-3">[[${order.createDate}]]</div>
+									<div class="d-none d-sm-block col-3 text-95">[[${order.address}]]</div>
+									<div class="d-none d-sm-block col text-95">
 										<a th:href="@{|/order/detail/${order.id}|}">
 											<i style="color: rgba(121,169,197,.92); font-size: large;" class="bi bi-folder2-open"></i>
 										</a>
